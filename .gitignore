@@ -1,0 +1,17 @@
+.DS_Store
+*.xcuserstate
+xcuserdata/
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+Pods/
+.build/
+
+# DuckDB native lib — downloaded via scripts/setup.sh (too big for git)
+DuckDBLib/
+
+# Local test databases
+*.duckdb
+

@@ -6,7 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4A25A5222FE9B23100E026E7 /* libduckdb.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A25A5212FE9B23100E026E7 /* libduckdb.dylib */; };
+		4A25A5232FE9B23100E026E7 /* libduckdb.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 4A25A5212FE9B23100E026E7 /* libduckdb.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4A25A5242FE9B23100E026E7 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4A25A5232FE9B23100E026E7 /* libduckdb.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4A25A5212FE9B23100E026E7 /* libduckdb.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libduckdb.dylib; path = DuckDBLib/libduckdb.dylib; sourceTree = "<group>"; };
 		4A81E4922FE9AA9D004FB3BB /* DuckMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -23,16 +43,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A25A5222FE9B23100E026E7 /* libduckdb.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A25A5202FE9B23100E026E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A25A5212FE9B23100E026E7 /* libduckdb.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4A81E4892FE9AA9D004FB3BB = {
 			isa = PBXGroup;
 			children = (
 				4A81E4942FE9AA9D004FB3BB /* DuckMap */,
+				4A25A5202FE9B23100E026E7 /* Frameworks */,
 				4A81E4932FE9AA9D004FB3BB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +85,7 @@
 				4A81E48E2FE9AA9D004FB3BB /* Sources */,
 				4A81E48F2FE9AA9D004FB3BB /* Frameworks */,
 				4A81E4902FE9AA9D004FB3BB /* Resources */,
+				4A25A5242FE9B23100E026E7 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -94,6 +125,8 @@
 			);
 			mainGroup = 4A81E4892FE9AA9D004FB3BB;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4A81E4932FE9AA9D004FB3BB /* Products */;
 			projectDirPath = "";
@@ -177,6 +210,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/DuckDBLib";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -184,6 +218,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DuckMap/DuckMap-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -234,12 +269,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/DuckDBLib";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "DuckMap/DuckMap-Bridging-Header.h";
 			};
 			name = Release;
 		};
